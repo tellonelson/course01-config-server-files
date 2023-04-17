@@ -1,0 +1,19 @@
+server:
+  port: ${CUSTOM.SERVER.PORT:9004}
+  
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${CUSTOM.EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
+  
+## conexion a la base de datos
+spring:
+  data:
+    mongodb: localhost
+      port: 27017
+      database: mitocode
+      #username: '{cipher}' #se puede usar de esta manera
+      #password: '{cipher}' #se puede usar de esta manera
+      uri: mongodb://mitocode:mitocode@localhost:27017
+      authentication-database: admin
