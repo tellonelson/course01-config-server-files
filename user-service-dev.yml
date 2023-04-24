@@ -5,12 +5,13 @@ eureka:
   client:
     register-with-eureka: true
     service-url:
-      defaultZone: ${CUSTOM.EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
   
 ## conexion a la base de datos
 spring:
   data:
-    mongodb: localhost
+    mongodb:
+      host: localhost
       port: 27017
       database: mitocode
       #username: '{cipher}' #se puede usar de esta manera
