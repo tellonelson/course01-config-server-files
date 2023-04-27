@@ -11,9 +11,9 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: user-service  #este es un identificador no tiene nada que ver con algun id
-          uri: user-service #este id debe estar creado en el eureka
+        - id: user-service
+          uri: user-service
           predicates:
             - Path=/api/user-service/**
           filters:
-            - StripPrefix=2  #tiene que ver con el path, es una parte de seguridad
+            - StripPrefix=2
