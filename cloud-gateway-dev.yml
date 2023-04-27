@@ -11,8 +11,8 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: user-services  #este es un identificador no tiene nada que ver con algun id
-          uri: user-services #este id debe estar creado en el eureka
+        - id: user-service  #este es un identificador no tiene nada que ver con algun id
+          uri: user-service #este id debe estar creado en el eureka
           predicates:
             - Path=/api/user-service/**
           filters:
