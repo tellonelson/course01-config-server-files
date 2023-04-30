@@ -21,3 +21,9 @@ spring:
             - Path=/api/user-service/**
           filters:
             - StripPrefix=2
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/api/product-service/**
+          filters:
+            - StripPrefix=2
