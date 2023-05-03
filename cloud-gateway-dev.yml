@@ -27,6 +27,7 @@ spring:
             - Path=/api/product-service/**
           filters:
             - StripPrefix=2
-            - AddRequestParameter=token,mitocode
-            - AddRequestHeader=token,mitocode
-            - AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_mitocode
+            #- AddRequestParameter=token,mitocode
+            #- AddRequestHeader=token,mitocode
+            #- AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_mitocode
+            - CustomFilter=MitoCodeKey, MitoCodeValue # se pone el nombre de la clase del filtro y se pone le pasan los valores del filtro
