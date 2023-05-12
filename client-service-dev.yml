@@ -21,6 +21,6 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 10
         slowCallDurationThreshold: 2s
         slowCallRateThreshold: 10
-    instance:
+    instances:
       productCB: # este es el id que debemos usar para ser usado en el controlador
         base-config: mitocode-circuitbreaker
