@@ -10,3 +10,17 @@ eureka:
     service-url:
       defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
     fetchRegistry: true
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      mitocode-circuitbreaker:
+        slidingWindowSize: 20 # se puede escribir de esta manera tambien sliding-window-size, lo escrito anterior es con camel case
+        failureRateThreshold: 75
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 10
+        slowCallDurationThreshold: 2s
+        slowCallRateThreshold: 10
+    instance:
+      productCB: # este es el id que debemos usar para ser usado en el controlador
+        base-config: mitocode-circuitbreaker
