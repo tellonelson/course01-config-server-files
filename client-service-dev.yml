@@ -24,3 +24,10 @@ resilience4j:
     instances:
       productCB: # este es el id que debemos usar para ser usado en el controlador
         base-config: mitocodeCircuitBreaker
+  timelimiter:
+    configs:
+      mitocodeTimeLimiterProduct: # este id se usa en base-config
+        timeoutDuration: 1s
+    instances:
+      product-timelimiter:
+        base-config: mitocodeTimeLimiterProduct # este id es parte del config
