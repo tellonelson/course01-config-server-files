@@ -36,3 +36,26 @@ spring:
             #  args:
             #    headerKey: MitoCodeKey
             #    headerValue: MitoCodeValue
+            - name: CircuitBreaker
+              args:
+                name: productCB # se usa el de la instacia declarada en resilience4j
+resilience4j:
+  circuitbreaker:
+    configs:
+      mitocodeCircuitBreaker:
+        slidingWindowSize: 20 # se puede escribir de esta manera tambien sliding-window-size, lo escrito anterior es con camel case
+        failureRateThreshold: 75
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 10
+        slowCallDurationThreshold: 2s
+        slowCallRateThreshold: 10
+    instances:
+      productCB: # este es el id que debemos usar para ser usado en el controlador
+        base-config: mitocodeCircuitBreaker
+  timelimiter:
+    configs:
+      mitocodeTimeLimiterProduct: # este id se usa en base-config
+        timeoutDuration: 1s
+    instances:
+      product-timelimiter:
+        base-config: mitocodeTimeLimiterProduct # este id es parte del config
