@@ -39,6 +39,8 @@ spring:
             - name: CircuitBreaker
               args:
                 name: productCB # se usa el de la instacia declarada en resilience4j
+                fallbackUri: forward:/api/user-service/user
+                statusCodes: 500, 403, 401, 400, 504
 resilience4j:
   circuitbreaker:
     configs:
