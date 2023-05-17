@@ -61,3 +61,10 @@ resilience4j:
     instances:
       product-timelimiter:
         base-config: mitocodeTimeLimiterProduct # este id es parte del config
+        
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG
