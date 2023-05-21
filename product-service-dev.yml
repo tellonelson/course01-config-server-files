@@ -30,7 +30,7 @@ spring:
 # configuracion de actuator 
 info:
   app:
-    app-name: Microservicio Product Service
+    name: Microservicio Product Service
     description: Módulo de la arquitectura que disponibiliza información de los Productos
     version: 1.0
 
