@@ -26,3 +26,32 @@ spring:
       #password: '{cipher}' #se puede usar de esta manera
       uri: mongodb://mitocode:mitocode@localhost:27017
       authentication-database: admin
+      
+# configuracion de actuator 
+info:
+  app:
+    name: Microservicio User Service
+    description: Módulo de la arquitectura que disponibiliza información de los Usuarios
+    version: 1.0
+
+management:
+  auditevents:
+    enable: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /actuator
+  endpoint:
+    health:
+      group:
+        custom:
+          include: diskSpace, ping, memory, mem
+          show-component: always
+          show-details: always
+  info:
+    env:
+      enabled: true
+  health:
+    env:
+      enabled: true
