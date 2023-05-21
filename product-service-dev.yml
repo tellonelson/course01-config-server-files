@@ -51,7 +51,7 @@ management:
           show-details: always
   info:
     env:
-      enable: true
+      enabled: true
   health:
     env:
-      enable: true
+      enabled: true
